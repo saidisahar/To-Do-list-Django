@@ -1,0 +1,101 @@
+{% include 'partials/header.html' %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+a {
+color: rgb(243, 156, 210);;
+text-align: center;
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
+font-style: italic;
+}
+
+
+body {
+  background-color: rgba(232, 233, 239, 1);
+  font-family: 'Roboto', sans-serif;
+}
+
+#form-container {
+    width: 500px;
+    box-shadow: var(--shadow);
+    background-color: #fff;
+    padding: 30px;
+    border-radius:5px;
+    border: 5px solid rgb(148, 222, 245);
+    margin: auto;
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+}
+
+
+.form-field {
+margin: 20px;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid rgba (198, 202, 219, 1);
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+
+
+.form-field label {
+    font-size: 16px;
+    line-height: 1.7em;
+}
+
+.form-field input {
+    width: 100%;
+    border: 2px solid rgba (198, 202, 219, 1);
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing:border-box;
+}
+
+.form-field input[type='submit']  {
+    background-color: rgb(77, 196, 233);
+    border: none;
+    color: #fff;
+}
+
+
+
+
+</style>
+<main>
+    <section id="form-container">
+        <form id="form" action="{% url 'add' %}" method="post">
+
+            {% csrf_token %}
+            <div class="form-field">
+                <label for="title">Title</label><br>
+                <input type="text" name="title" id="title"/>
+            </div>
+            
+
+            <div class="form-field">
+                <label for="text">Text</label><br>
+                <textarea name="text" id="text"></textarea><br>
+            </div>
+
+            <div class="form-field">
+                <input type="submit" value="Submit">
+            </div>
+
+        </form>
+        <a href="/">Go Back</a>
+    </section>
+</main>
+
+{% include 'partials/footer.html' %}

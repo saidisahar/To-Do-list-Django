@@ -1,0 +1,7 @@
+body {
+  background: radial-gradient(50% 123.47% at 50% 50%, #b9f7dd 0%, #fdd5f4 100%),
+    linear-gradient(121.28deg, #d8f795 0%, #fab8b8 100%),
+    linear-gradient(360deg, #9faef7 0%, #d4f8a6 100%),
+    radial-gradient(100% 164.72% at 100% 100%, #ccaffa 0%, #b3fccb 100%),
+    radial-gradient(100% 148.07% at 0% 0%, #f5f2a0 0%, #cefdb0 100%);
+}

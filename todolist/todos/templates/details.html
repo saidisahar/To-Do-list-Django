@@ -1,0 +1,45 @@
+{% include 'partials/header.html' %}
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+h1, p, a {font-family: 'Roboto', sans-serif;
+}
+
+a {
+        font-size: 16px;
+        font-style: italic;
+        color: rgb(243, 156, 210);
+}
+h1 {
+    font-size: 17px;
+}
+
+p {
+    font-size: 16px;
+}
+
+#form-container {
+    width: 700px;
+    box-shadow: var(--shadow);
+    background-color: #fff;
+    padding: 30px;
+    border-radius:5px;
+    border: 8px solid rgb(148, 222, 245);
+    margin: auto;
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+}
+</style>
+<section id="form-container">
+    <a href="/todos"> Go Back </a>
+    <h1>*** {{todo.title}} ***</h1>
+    <br>
+    <p>{{todo.text}}</p>
+    <br>
+    <p>Created on {{todo.created_at}}</p>
+</section>
+
+{% include 'partials/footer.html' %}

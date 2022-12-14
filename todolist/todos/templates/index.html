@@ -1,0 +1,68 @@
+{% include 'partials/header.html' %}
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+    li, a, h1 {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 15px;
+    }
+
+    li:before {
+    content: "\25BA \0020";
+    font-size: 6px;
+    position: absolute;
+    top: 5px;
+    left: -10px;
+    }
+
+    h1 {
+        font-size: 28px;
+        text-align: center;
+        color:rgb(68, 67, 67)
+    }
+
+    a {
+        font-size: 16px;
+        font-style: italic;
+        color: rgb(9, 156, 167);
+    }
+
+    #form-container {
+    width: 700px;
+    box-shadow: var(--shadow);
+    background-color: #fff;
+    padding: 30px;
+    border-radius:5px;
+    border: 8px solid rgb(148, 222, 245);
+    margin: auto;
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+}
+</style>
+
+<header>
+    <h1>My To-Do List</h1>
+</header>
+
+<section id="form-container">
+    <ul>
+        {% for todo in todos %}
+            <li><a href= "/todos/details/{{todo.id}}">{{todo.title}}</a> :<br> {{todo.text}}</li><br>
+    
+        {% endfor %}
+        <br>
+        <br>
+        <a href='/todos/add' style="color: rgb(243, 156, 210);">Add a task</a>
+    </ul>
+</section>
+    
+{% include 'partials/footer.html' %}
+
+
